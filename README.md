@@ -2,19 +2,19 @@
 # 🎨 termfx
 
 > Powerful and beautiful terminal output/input utilities for Python CLI tools.  
-> Make your command-line tools look professional, readable and sexy 💅
+> Make your command-line apps look professional, stylish, and human-friendly 💅
 
 ---
 
 ## 🚀 Installation
 
-You can install `termfx` via pip:
+Install via pip:
 
 ```bash
 pip install termfx
 ```
 
-Or clone manually and install from source:
+Or install from source:
 
 ```bash
 git clone https://github.com/MyArchiveProjects/termfx
@@ -26,76 +26,80 @@ pip install .
 
 ## 💡 What is termfx?
 
-`termfx` is a lightweight, modern, and flexible terminal UI helper —  
-ideal for hacking tools, CLI apps, devtools, fancy banners, dashboards and everything terminal-related.
+`termfx` is a lightweight and flexible terminal UI helper —  
+perfect for hacking tools, CLI utilities, developer dashboards, and more.
 
-- ✅ Clean and colored terminal outputs
+### Features:
+- ✅ Beautiful colored output
 - ✅ Centered input/output
-- ✅ Built-in prompts: `[+]`, `[!]`, `[>]`, `[-]` style
-- ✅ Password/hidden input
-- ✅ Yes/No confirmation prompts
+- ✅ Prompt styles: `[+]`, `[!]`, `[>]`, `[-]`
+- ✅ Hidden input for passwords
+- ✅ Yes/No confirmation
 - ✅ JSON pretty-printing
-- ✅ Tables, dividers and even progress bars
-- ✅ Works on **Windows**, **Linux**, **MacOS**
+- ✅ Table rendering
+- ✅ Progress bars
+- ✅ Works on Windows, Linux, and macOS
 
 ---
 
-## 📦 Basic Usage
+## ⚡ Quick Example
 
 ```python
 from termfx import *
 
 printSuccess("Welcome to termfx!")
+printCentered("Loading complete", mode="line")
 name = inputCentered("Enter your name:", mode="line")
 printInfo(f"Hello, {name}!")
 ```
 
 ---
 
-## 🧱 Functions Overview
+## 📚 API Overview
 
-### ✅ Print Functions
+### 📤 Output Functions
 
-| Function           | Description                          |
-|--------------------|--------------------------------------|
-| `printInfo(text)`       | Light blue `[>]` prefix           |
-| `printSuccess(text)`    | Green `[+]` prefix               |
-| `printError(text)`      | Red `[!]` prefix                 |
-| `printWarning(text)`    | Yellow `[-]` prefix              |
-| `printBanner(text)`     | Cyan banner text (no prefix)     |
-| `printDivider(char="-", length=50)` | Horizontal line divider |
-
----
-
-### 🔤 Input Functions
-
-| Function             | Description                      |
-|----------------------|----------------------------------|
-| `inputInfo(text)`        | Input with `[>]` prompt        |
-| `inputSuccess(text)`     | Input with `[+]` prompt        |
-| `inputError(text)`       | Input with `[!]` prompt        |
-| `inputWarning(text)`     | Input with `[-]` prompt        |
-| `inputCentered(text, mode="banner")` | Centered input         |
-| `inputHidden(prompt)`     | Hidden input (e.g. password)   |
-| `askYesNo(question)`      | Prompt for y/n confirmation    |
+| Function                                 | Description                                      |
+|------------------------------------------|--------------------------------------------------|
+| `printInfo(text)`                        | Light blue `[>]` prefix                          |
+| `printSuccess(text)`                     | Green `[+]` prefix                               |
+| `printError(text)`                       | Red `[!]` prefix                                 |
+| `printWarning(text)`                     | Yellow `[-]` prefix                              |
+| `printBanner(text)`                      | Cyan banner text (no prefix)                     |
+| `printCentered(text, mode='banner')`     | Centered output; `mode='banner'` or `'line'`     |
+| `printDivider(char='-', length=50)`      | Horizontal divider line                          |
 
 ---
 
-### 🧰 Utilities
+### 🧾 Input Functions
 
-#### JSON Pretty-Print
+| Function                                 | Description                                      |
+|------------------------------------------|--------------------------------------------------|
+| `inputInfo(text)`                        | Standard `[>]` input prompt                      |
+| `inputSuccess(text)`                     | Green `[+]` input                                |
+| `inputError(text)`                       | Red `[!]` input                                  |
+| `inputWarning(text)`                     | Yellow `[-]` input                               |
+| `inputCentered(text, mode='banner')`     | Centered input; `mode='banner'` or `'line'`      |
+| `inputHidden(prompt)`                    | Hidden input (e.g. for passwords)                |
+| `askYesNo(question)`                     | Ask a yes/no question, returns `True`/`False`    |
+
+---
+
+### 🔧 Utilities
+
+#### Pretty JSON Output
 
 ```python
-data = {"name": "Alice", "age": 30}
+data = {"name": "Alice", "score": 95}
 printJsonPretty(data)
 ```
 
-#### Tables
+#### Table Rendering
 
 ```python
 printTable(
     headers=["User", "Score"],
-    rows=[["Alice", 100], ["Bob", 85]]
+    rows=[["Alice", 90], ["Bob", 85], ["Eve", 99]]
 )
 ```
 
@@ -103,10 +107,30 @@ printTable(
 
 ```python
 import time
-total = 50
+total = 100
 for i in range(total + 1):
     progressBar(i, total, prefix='Progress', suffix='Complete', length=40)
-    time.sleep(0.05)
+    time.sleep(0.03)
 ```
 
 ---
+
+## 🤝 Contributing
+
+Want to add features or fix something? Pull requests are welcome.  
+You can also submit issues on the [GitHub issues page](https://github.com/MyArchiveProjects/termfx/issues).
+
+---
+
+## 📄 License
+
+MIT License – do whatever you want, just give credit.
+
+---
+
+## 🔗 Links
+
+- PyPI: [https://pypi.org/project/termfx/1.0.0/](https://pypi.org/project/termfx/1.0.0/)
+- GitHub: [https://github.com/MyArchiveProjects/termfx](https://github.com/MyArchiveProjects/termfx)
+
+Enjoy building your sexy terminals 🤘
